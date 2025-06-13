@@ -83,11 +83,19 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
           <NavLink
             to="/arbitrage"
             className={({ isActive }) =>
-              `relative group text-md font-medium ${isActive ? 'text-green-400' : 'text-gray-400 hover:text-green-400'
-              } transition-colors`
+              `relative group text-md font-medium ${isActive ? 'text-green-400' : 'text-gray-400 hover:text-green-400'} transition-colors`
             }
           >
             Viper Arbitrage
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+          </NavLink>
+          <NavLink
+            to="/futures"
+            className={({ isActive }) =>
+              `relative group text-md font-medium ${isActive ? 'text-green-400' : 'text-gray-400 hover:text-green-400'} transition-colors`
+            }
+          >
+            Futures
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
           </NavLink>
         </nav>
@@ -189,6 +197,15 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
                 }}
               >
                 Viper Arbitrage
+              </button>
+              <button
+                className="w-full text-left hover:text-green-400 transition-colors"
+                onClick={() => {
+                  navigate('/futures');
+                  closeMenu();
+                }}
+              >
+                Futures
               </button>
               <button
                 onClick={(e) => {

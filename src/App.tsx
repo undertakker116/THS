@@ -4,6 +4,7 @@ import Header from './components/Header';
 import AuthModal from './components/elements/AuthModal';
 import Home from './components/Home';
 import Arbitrage from './components/Arbitrage'
+import Futures from './components/Futures'
 
 const App: React.FC = () => {
   const [isAuthModalOpen, setAuthModalOpen] = useState(false);
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path='/arbitrage' element={<Arbitrage />} />
+            <Route path='/futures' element={<Futures />} />
           </Routes>
         </div>
       </main>
